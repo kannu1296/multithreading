@@ -1,10 +1,14 @@
 package synchronization;
 
-import org.springframework.beans.factory.annotation.Autowired;
-
-public class Withdrawal extends Thread {
-    @Autowired
+/**
+ * Utility to withdraw cash from account
+ */
+public class Withdrawal implements Runnable {
     private Account account;
+
+    public Withdrawal(Account account) {
+        this.account = account;
+    }
 
     @Override
     public void run(){
